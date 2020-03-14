@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane hgap="10.0" prefHeight="380.0" prefWidth="530.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="auction.control.auctionViewController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Button fx:id="closeAuctionButton" mnemonicParsing="false" onAction="#closeAuction" text="Close Auction" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <Button fx:id="addBidderButton" mnemonicParsing="false" onAction="#addBidder" text="Add Bidder" GridPane.rowIndex="6" />
+      <Label text="Status:" GridPane.rowIndex="2" />
+      <Label text="Item" GridPane.rowIndex="1" />
+      <Label text="Endtime" GridPane.rowIndex="3" />
+      <Label text="Remaining Time" GridPane.rowIndex="4" />
+      <Label text="Current Bid" GridPane.rowIndex="5" />
+      <Label GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label fx:id="StatusLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label fx:id="endTimeLabel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label fx:id="remainingTimeLabel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Label fx:id="currentBidLabel" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <Label fx:id="titleLabel" styleClass="title" GridPane.columnSpan="2" />
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</GridPane>

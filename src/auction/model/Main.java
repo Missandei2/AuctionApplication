@@ -9,9 +9,9 @@ import javafx.stage.Stage;
 public final class Main extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("test.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("administrationView.fxml"));
 		Scene scene = new Scene(root);
-		stage.setTitle("hallo");
+		stage.setTitle("Auction System");
 		stage.setScene(scene);
 		stage.show();
 	}
