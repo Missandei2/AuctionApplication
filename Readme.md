@@ -13,6 +13,8 @@ e(fx)clipse https://www.eclipse.org/efxclipse/install.html
 ```bash
 javac main.java
 java main
+```
+
 
 ## Reason
 
