@@ -1,5 +1,3 @@
-Todo
-
 # AuctionSystem
 
 At the end this should be an allication for an Auction of items. 
