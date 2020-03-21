@@ -23,7 +23,7 @@ public class AdministrationViewController {
 	public void startAuction() {
 		auction = new Auction(null);
 		auctionViewController auctionController = new auctionViewController(auction);
-		Main.showDialog("auctionView.fxml", "Auction for " + items.toString(), auctionController);
+//		Main.showDialog("auctionView.fxml", "Auction for " + items.toString(), auctionController);
 	}
 
 	public void showBids() {
