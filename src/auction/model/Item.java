@@ -13,7 +13,6 @@ public final class Item {
 
 	public void sold() {
 		
-		//lol
 		
 	}
 }
