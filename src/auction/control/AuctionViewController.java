@@ -8,7 +8,7 @@ import javafx.event.ActionEvent;
 
 import javafx.scene.control.Label;
 
-public class auctionViewController {
+public class AuctionViewController {
 	@FXML
 	private Button closeAuctionButton;
 	@FXML
@@ -25,7 +25,7 @@ public class auctionViewController {
 	private Label titleLabel;
 	
 
-	public auctionViewController(Auction auction) {
+	public AuctionViewController() {
 	}
 	// Event Listener on Button[#closeAuctionButton].onAction
 	@FXML

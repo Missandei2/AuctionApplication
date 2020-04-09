@@ -1,12 +1,16 @@
 package auction.control;
 
+import java.io.IOException;
+
 import auction.model.Auction;
 import auction.model.Item;
-import auction.model.Main;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.stage.Stage;
 
 public class AdministrationViewController {
 	
@@ -19,13 +23,28 @@ public class AdministrationViewController {
 	private Button exit;
 	@FXML
 	private ListView<Item> items;
+	
+	public void initialize() {
+		
+	}
 
 	public void startAuction() {
+		//showBidsButton.setDisable(true);
+
 		auction = new Auction(null);
-		auctionViewController auctionController = new auctionViewController(auction);
-//		Main.showDialog("auctionView.fxml", "Auction for " + items.toString(), auctionController);
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("../resource/auctionView.fxml"));
+			Scene scene = new Scene(root);
+			Stage stage = new Stage();
+			stage.setTitle("Auction System");
+			stage.setScene(scene);
+			stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
 	}
 
 	public void showBids() {
+		
 	}
 }
