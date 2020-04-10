@@ -22,7 +22,7 @@ public final class LoginViewController extends BaseController {
 	private TextField usernameInput;
 	@FXML
 	private PasswordField passwordInput;
-//	
+	
 //	@FXML
 //	private Button login;
 //	
