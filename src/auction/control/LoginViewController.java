@@ -6,6 +6,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
+import auction.model.Auction;
 import javafx.event.ActionEvent;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -23,6 +24,7 @@ public class LoginViewController {
 	private PasswordField password;
 
 	// Event Listener on Button.onAction
+	
 	@FXML
 	public void login(ActionEvent event) {
 		
@@ -41,6 +43,7 @@ public class LoginViewController {
 	// Event Listener on Button.onAction
 	@FXML
 	public void cancel(ActionEvent event) {
+		
 		
 		 
 		

@@ -7,14 +7,20 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 
 import java.io.IOException;
+import java.time.format.DateTimeFormatter;
 
 import auction.model.Auction;
+import auction.model.AuctionObserver;
+import auction.model.Bid;
 import javafx.event.ActionEvent;
 
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class AuctionViewController {
+public class AuctionViewController implements AuctionObserver {
+	public AuctionViewController() {
+	}
+
 	@FXML
 	private Button closeAuctionButton;
 	@FXML
@@ -29,16 +35,19 @@ public class AuctionViewController {
 	private Label currentBidLabel;
 	@FXML
 	private Label titleLabel;
-	
 
-	public AuctionViewController() {
-		
+	public void initialize(Auction auction) {
+//		this.auction = auction;
+//		titleLabel.setText(auction.getItem().toString());
+//		titleLabel.setText("Auction for: " + auction.getItem().toString());
 	}
+
 	// Event Listener on Button[#closeAuctionButton].onAction
 	@FXML
 	public void closeAuction(ActionEvent event) {
-		
+//		closeDialog(titleLabel.getScene());
 	}
+
 	// Event Listener on Button[#addBidderButton].onAction
 	@FXML
 	public void addBidder(ActionEvent event) {
@@ -53,8 +62,18 @@ public class AuctionViewController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
+	}
+
+	@Override
+	public void update(Auction auction) {
+		endTimeLabel.setText(auction.getEndTime().format(DateTimeFormatter.ofPattern("dd.MM.yyy HH:mm:ss")));
+		Bid currentBid = auction.getCurrentBid();
+		if (currentBid != null) {
+			currentBidLabel.setText(currentBid.toString());
+		} else {
+			currentBidLabel.setText(".......");
+		}
+
 		
 	}
 }

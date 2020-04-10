@@ -14,8 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
-public class AdministrationViewController {
-	
+public class AdministrationViewController  {
 	private Auction auction;
 	@FXML
 	private Button startAuctionButton;
@@ -25,18 +24,14 @@ public class AdministrationViewController {
 	private Button exit;
 	@FXML
 	private ListView<Item> items;
-	
+
 	public void initialize() {
 		items.getItems().addAll(Administration.getInstance().getCatalogue().getItem());
-		
-		
-		
 	}
 
-	public void startAuction() {
-		//showBidsButton.setDisable(true);
-
-		auction = new Auction(null);
+	public void startAuction() throws IOException {
+		Item item = items.getSelectionModel().getSelectedItem();
+		Auction auction = new Auction(item);
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("../resource/AuctionView.fxml"));
 			Scene scene = new Scene(root);
@@ -46,7 +41,8 @@ public class AdministrationViewController {
 			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
-		} 
+		}
+		auction.start();
 	}
 
 	public void showBids() {
@@ -61,7 +57,5 @@ public class AdministrationViewController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
 	}
 }
