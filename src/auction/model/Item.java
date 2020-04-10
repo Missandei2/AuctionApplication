@@ -1,18 +1,22 @@
 package auction.model;
 
 public final class Item {
-	
-	private int id = 0; 
 	private String description = "";
 	private double minimum = 0.0;
-	private ItemState state;
-	
-	public Item(String description, double mimimum) {
-		// TODO Auto-generated constructor stub
+
+	public Item(String description, double minimum) {
+		this.description = description;
+		this.minimum = minimum;
 	}
 
-	public void sold() {
-		
-		
+	@Override
+	public String toString() {
+		return description + " " + minimum;
 	}
+
+	public double getMinimumPrice() {
+		return minimum;
+	}
+//	public void sold() {
+//	}
 }

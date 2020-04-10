@@ -25,13 +25,13 @@
 	<children>
 		<Label fx:id="auctionItemLabel" styleClass="title" GridPane.columnSpan="2" />
 		<Label text="Your Bid:" GridPane.rowIndex="1" />
+      <TextField fx:id="bidField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 		<Button fx:id="placeBidButton" mnemonicParsing="false" onAction="#placeBid" text="Place Bid" GridPane.rowIndex="2" />
 		<Separator GridPane.columnSpan="2" GridPane.rowIndex="3" />
 		<Label fx:id="messageLabel" GridPane.columnSpan="2" GridPane.rowIndex="4" />
 		<Label GridPane.rowIndex="5" />
 		<Label GridPane.columnIndex="1" GridPane.rowIndex="5" />
 		<Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logout" text="Logout" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <TextField fx:id="bidField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 	</children>
 	<padding>
 		<Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

@@ -4,16 +4,21 @@ public class User {
 	private String username = "";
 	private String password = "";
 
-	public User() {
+	public User(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
 	}
 
 	public boolean isValid(String username, String password) {
-		return false;
+		return this.username == username && this.password == password;
 	}
 
-	public void bid(double amount) {
+	public String getUsername() {
+		return username;
 	}
-
-	public void joinAuction(Auction auction) {
-	}
+	// public void bid(double amount) {
+	// }
+	// public void joinAuction(Auction auction) {
+	// }
 }

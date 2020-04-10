@@ -1,19 +1,30 @@
 package auction.model;
 
-import java.time.LocalTime;
-
 public class Bid {
-	
-	private double amount = 0.0;
-	private LocalTime timestamp; 
-	
-	public boolean isAfter(Bid other) {
-		return false;
+	private final double amount;
+	private final User user;
+
+	public Bid(double amount, User user) {
+		this.amount = amount;
+		this.user = user;
 	}
-	
-	public boolean isHigher(Bid other) {
-		return false;
+
+	public double getAmount() {
+		return amount;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return amount + " by " + user.getUsername();
+	}
+
+	public User getUser() {
+		return user;
+	}
+//	public boolean isAfter(Bid other) {
+//		return false;
+//	}
+//	public boolean isHigher(Bid other) {
+//		return false;
+//	}
 }
