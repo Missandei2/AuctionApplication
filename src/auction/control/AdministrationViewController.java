@@ -3,6 +3,8 @@ package auction.control;
 import java.io.IOException;
 
 import auction.model.Auction;
+import auction.model.Administration;
+import auction.model.Catalogue;
 import auction.model.Item;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,6 +27,9 @@ public class AdministrationViewController {
 	private ListView<Item> items;
 	
 	public void initialize() {
+		items.getItems().addAll(Administration.getInstance().getCatalogue().getItem());
+		
+		
 		
 	}
 

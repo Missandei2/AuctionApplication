@@ -1,21 +1,22 @@
 package auction.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 
 public final class Catalogue {
 	
-	private ArrayList<Item> items;
+	private List<Item> items = new ArrayList<>();
 	
 	public Catalogue() {
-		items = new ArrayList<Item>();
-		items.add(new Item("ahljsdl", 30.00));
+		items.add(new Item("Item 1", 30.00));
 	}
 	
 	public void selectItem(Item item) {
 		
 	}
-	public ArrayList<Item> getItem(){
-		return items;
+	public List<Item> getItem(){
+	return Collections.unmodifiableList(items);
 	}
 }
