@@ -7,7 +7,7 @@
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="auction.control.bidderListViewController">
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="auction.control.BidListViewController">
    <top>
       <Label prefHeight="43.0" prefWidth="48.0" text="Bid List" BorderPane.alignment="CENTER" />
    </top>

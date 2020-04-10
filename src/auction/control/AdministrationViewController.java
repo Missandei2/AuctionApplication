@@ -33,7 +33,7 @@ public class AdministrationViewController {
 
 		auction = new Auction(null);
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("../resource/auctionView.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("../resource/AuctionView.fxml"));
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setTitle("Auction System");
@@ -45,6 +45,18 @@ public class AdministrationViewController {
 	}
 
 	public void showBids() {
+		Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource("../resource/BidListView.fxml"));
+			Scene scene = new Scene(root);
+			Stage stage = new Stage();
+			stage.setTitle("Bids");
+			stage.setScene(scene);
+			stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 		
 	}
 }

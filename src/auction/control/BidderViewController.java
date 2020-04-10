@@ -8,7 +8,7 @@ import javafx.event.ActionEvent;
 
 import javafx.scene.control.Label;
 
-public class bidderViewController {
+public class BidderViewController {
 	@FXML
 	private Label auctionItemLabel;
 	@FXML
