@@ -10,6 +10,8 @@ e(fx)clipse https://www.eclipse.org/efxclipse/install.html
 
 Go to eclipse -> help -> install new software -> all available sites (if it does not show up it is (maybe) because you already installed it.
 
+Better use Maven
+
 ## run in terminal
 
 ```bash
@@ -23,4 +25,4 @@ It is easier to clone the project, make a new java project in eclipse, do not us
 
 ## Reason
 
-This is the main exercise in the java course at BFH Bern. Goals: OOP, Java FX and FXML.
+This is the main exercise in the java course at BFH Bern. Goals: OOP, Java FX and FXML, Threads, Pattern like observer, singleton...

@@ -41,7 +41,6 @@ public final class BidderViewController implements AuctionObserver {
 			auction.placeBid(bid);
 		} catch (InvalidBidException e) {
 			messageLabel.setText(e.getMessage());
-			;
 		}
 	}
 

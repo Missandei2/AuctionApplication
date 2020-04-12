@@ -85,11 +85,10 @@ public final class Auction {
 	}
 
 	public Bid getCurrentBid() {
-		if (bids.size() > 0) {
+		if (bids.size() > 0)
 			return bids.get(bids.size() - 1);
-		} else {
+		else
 			return null;
-		}
 	}
 
 	public void placeBid(Bid bid) throws InvalidBidException {
@@ -97,13 +96,13 @@ public final class Auction {
 		if (currentBid == null) {
 			if (bid.getAmount() < item.getMinimumPrice()) {
 				throw new InvalidBidException("Amount must be equal or higher than minimum price.");
-			} else {
-				if (bid.getAmount() <= current.getAmount()) {
-					throw new InvalidBidException("Amount must be higher than current bid.");
-				}
 			}
-			bids.add(bid);
-			notifyObservers();
+		} else {
+			if (bid.getAmount() <= current.getAmount()) {
+				throw new InvalidBidException("Amount must be higher than current bid.");
+			}
 		}
+		bids.add(bid);
+		notifyObservers();
 	}
 }
