@@ -1,6 +1,7 @@
 package auction.control;
 
 import auction.model.Auction;
+import auction.model.AuctionObserver;
 import auction.model.Bid;
 import auction.model.InvalidBidException;
 import auction.model.ItemState;
@@ -11,7 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public final class BidderViewController extends BaseController {
+public final class BidderViewController implements AuctionObserver {
 	private Auction auction;
 	private User user;
 	@FXML
@@ -23,13 +24,13 @@ public final class BidderViewController extends BaseController {
 	@FXML
 	private Button logoutButton;
 	@FXML
-	private TextField amountfield;
+	private TextField bidField;
 
 	// Event Listener on Button[#placeBidButton].onAction
 	@FXML
-	public void placeBid(ActionEvent event) {
+	public void placeBid() {
 		messageLabel.setText("");
-		String amountStr = amountfield.getText();
+		String amountStr = bidField.getText();
 		if (!amountStr.matches("\\d+(\\.\\d+)?")) {
 			messageLabel.setText("Amount must be a positive number.");
 			return;
@@ -55,15 +56,6 @@ public final class BidderViewController extends BaseController {
 		this.user = user;
 	}
 
-	@Override
-	void handleUpdate(Auction auction) {
-		if (auction.getStatus() == ItemState.RUNNING) {
-			updateCurrentBidLabel();
-		} else if (auction.getStatus() == ItemState.TERMINATED) {
-			placeBidButton.setDisable(true);
-		}
-	}
-
 	private void updateCurrentBidLabel() {
 		Bid currentBid = auction.getCurrentBid();
 		if (currentBid != null)
@@ -75,5 +67,15 @@ public final class BidderViewController extends BaseController {
 	// Event Listener on Button[#logoutButton].onAction
 	@FXML
 	public void logout(ActionEvent event) {
+	}
+
+	@Override
+	public void update(Auction auction) {
+		if (auction.getStatus() == ItemState.RUNNING) {
+			updateCurrentBidLabel();
+		} else if (auction.getStatus() == ItemState.TERMINATED) {
+			placeBidButton.setDisable(true);
+		}
+		
 	}
 }

@@ -30,12 +30,14 @@ public final class AuctionViewController extends BaseController {
 	private Label currentBidLabel;
 	@FXML
 	private Label titleLabel;
+	
 	private Auction auction;
 
 	public void initialize(Auction auction) {
 		this.auction = auction;
 		this.auction.addObserver(this);
 		titleLabel.setText(auction.getItem().toString());
+		
 	}
 
 	// Event Listener on Button[#addBidderButton].onAction
@@ -83,6 +85,7 @@ public final class AuctionViewController extends BaseController {
 				auction.getRemainingTime().toDays(), auction.getRemainingTime().toHoursPart(),
 				auction.getRemainingTime().toMinutesPart(), auction.getRemainingTime().toSecondsPart());
 		remainingTimeLabel.setText(remainingTime);
+		StatusLabel.setText(auction.getStatus().toString());
 		Bid currentBid = auction.getCurrentBid();
 		if (currentBid != null)
 			currentBidLabel.setText(currentBid.toString());

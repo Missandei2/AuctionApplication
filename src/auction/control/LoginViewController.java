@@ -10,25 +10,23 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public final class LoginViewController extends BaseController {
-//	@FXML
-//	private BorderPane root;
+	@FXML
+	private BorderPane root;
 	@FXML
 	private TextField usernameInput;
 	@FXML
 	private PasswordField passwordInput;
-	
 //	@FXML
 //	private Button login;
 //	
 //	@FXML
 //	private Button cancel;
-	
 	private Auction auction;
 
 	// Event Listener on Button.onAction
@@ -52,13 +50,12 @@ public final class LoginViewController extends BaseController {
 		} else {
 			cancel();
 		}
-//	
 //		Parent root;
 //		try {
 //			root = FXMLLoader.load(getClass().getResource("../resource/BidderView.fxml"));
 //			Scene scene = new Scene(root);
 //			Stage stage = new Stage();
-//			stage.setTitle("Bidder");
+//			stage.setTitle(usernameInput.getText());
 //			stage.setScene(scene);
 //			stage.show();
 //		} catch (IOException e) {

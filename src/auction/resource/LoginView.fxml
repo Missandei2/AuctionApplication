@@ -32,9 +32,9 @@
 			</rowConstraints>
 			<children>
 				<Label text="Username" />
-				<TextField fx:id="username" GridPane.columnIndex="1" />
+				<TextField fx:id="usernameInput" GridPane.columnIndex="1" />
 				<Label text="Passwort" GridPane.rowIndex="1" />
-				<PasswordField fx:id="password"
+				<PasswordField fx:id="passwordInput"
 					GridPane.columnIndex="1" GridPane.rowIndex="1" />
 			</children>
 			<opaqueInsets>
