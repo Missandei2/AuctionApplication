@@ -10,7 +10,7 @@ e(fx)clipse https://www.eclipse.org/efxclipse/install.html
 
 Go to eclipse -> help -> install new software -> all available sites (if it does not show up it is (maybe) because you already installed it.
 
-Better use Maven
+Better use Maven toDo
 
 ## run in terminal
 
